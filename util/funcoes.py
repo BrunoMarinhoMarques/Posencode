@@ -15,10 +15,23 @@ def random_excesso():
 
 def criptografia(texto,codificador):
     texto_criptografado = ""
+    lista_texto_criptografado = ""
     for caracter in texto:
         texto_criptografado += chr(ord(caracter) + codificador)
+        lista_texto_criptografado = list(texto_criptografado)
     loading()
-    return texto_criptografado
+    resultado_final = inversao_caracteres(lista_texto_criptografado)
+    return resultado_final
+
+def inversao_caracteres(posicoes):
+ for i in range(1, len(posicoes), 2):
+    posicoes[i], posicoes[i-1] = posicoes[i-1], posicoes[i]
+
+    resultado = "".join(posicoes)
+    return resultado
+
+
+
 
 
 def loading():

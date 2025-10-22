@@ -9,11 +9,11 @@ while continuar!=False:
  resultado_criptografado = criptografia(texto, codificador_randomico)
  resposta = input("Gostaria de ver a mensagem criptografada? | 1 - SIM | 2 - NÃO |\n")
  if resposta=="1":
-  print(f"Mensagem criptografada: {resultado_criptografado}")
+  print("Mensagem criptografada: ", resultado_criptografado)
   resposta = input("Gostaria de descriptografar a mensagem? | 1 - SIM | 2 - NÃO |\n")
   if resposta =="1":
     resultado = descriptografia(resultado_criptografado, codificador_randomico)
-    print(f"Mensagem descriptografada: {resultado}\n")
+    print("Mensagem descriptografada: ", resultado)
     continuar = input("Gostaria de continuar criptografando? | 1 - SIM | 2 - NÃO | \n")
     if continuar == "1":
         continuar = True
