@@ -25,7 +25,7 @@ while continuar!=False:
  else:
   resposta = input("Gostaria de descriptografar a mensagem? | 1 - SIM | 2 - NÃO | \n")
   if resposta=="1":
-    resultado = descriptografia(resultado_criptografado, codificador_randomico)
+    resultado = descriptografia(resultado_criptografado, codificador_randomico, texto)
     print(f"Mensagem descriptografada: {resultado}")
     continuar = input("Gostaria de continuar criptografando? | 1 - SIM | 2 - NÃO | \n")
     if continuar == "1":
