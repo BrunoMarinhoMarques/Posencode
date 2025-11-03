@@ -14,6 +14,14 @@ def random_excesso():
         num = int(R1 * 100) % 10
     return num
 
+def criar_arquivo_texto(texto):
+    arquivo = open('arquivo.txt', 'w', encoding='utf-8')
+    arquivo.write(texto)
+    arquivo.close()
+
+
+
+ 
 
 def criptografia(texto,codificador):
     texto_original = ""
@@ -23,17 +31,15 @@ def criptografia(texto,codificador):
           if(ord(caracter) + codificador >= 127):
               texto_criptografado += chr((ord(caracter) - 95) + codificador)
               lista_texto_criptografado = list(texto_criptografado)
-             
-        #if(ord(caracter)>=118 and ord(caracter)<=122):
-         # texto_criptografado += chr(ord(caracter) - codificador)
-          #lista_texto_criptografado = list(texto_criptografado)
           else: 
             texto_criptografado += chr(ord(caracter) + codificador)
             lista_texto_criptografado = list(texto_criptografado)
          
-    #loading()
+    loading()
     resultado_final = inversao_caracteres(lista_texto_criptografado)
+    criar_arquivo_texto(resultado_final)
     return resultado_final
+
 
 
 
@@ -45,13 +51,10 @@ def descriptografia(texto,codificador):
           if(ord(caracter) - codificador < 32):
               texto_criptografado += chr((ord(caracter) + 95) - codificador)
               lista_texto_criptografado = list(texto_criptografado)
-        #if(ord(caracter)>=118 and ord(caracter)<=122):
-         # texto_criptografado += chr(ord(caracter) - codificador)
-          #lista_texto_criptografado = list(texto_criptografado)
           else: 
             texto_criptografado += chr(ord(caracter) - codificador)
             lista_texto_criptografado = list(texto_criptografado)
-    #loading()
+    loading()
     resultado_final = inversao_caracteres(lista_texto_criptografado)
     return resultado_final
 
@@ -72,13 +75,12 @@ def inversao_caracteres_descriptografar(posicoes):
 
 
 
-
 def loading():
-    segundos=2
+    segundos=3
     print("Carregando", end="")
     for _ in range(segundos):
         print(".", end="")
-        sys.stdout.flush()  # força a impressão imediata
+        sys.stdout.flush()
         time.sleep(1)
     print("\nConcluído!")
 
