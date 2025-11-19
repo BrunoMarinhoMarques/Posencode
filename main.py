@@ -1,13 +1,9 @@
 from util import *
 
-
-
-
-
 continuar = True
 while continuar!=False:
  desenha_logo()       
- texto = input("\n\nDigite o texto que será codificado: ")
+ texto = input("\n\nDigite o texto que será codificado (não pode ter acento): ")
  codificador_randomico = random_excesso()
  resultado_criptografado = criptografia(texto, codificador_randomico)
  resposta = input("Gostaria de ver a mensagem criptografada? | 1 - SIM | 2 - NÃO |\n")
